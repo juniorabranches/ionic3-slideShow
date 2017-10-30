@@ -1,0 +1,23 @@
+<ion-content>
+      <ion-slides paginationClickable=true
+                  initialSlide=0
+                  loop=true
+                  autoplay=1000
+                  speed=2000
+                  #mySlider>
+
+        <ion-slide *ngFor="let item of elenco">
+          <ion-item class="itemPosicao" color="dark">
+            {{item.posicao}}
+          </ion-item>
+          <img src="{{item.img}}">
+          <ion-item color="primary">
+            {{item.camisa}} | {{item.nome}}
+          </ion-item>
+        </ion-slide>
+      </ion-slides>
+
+      <div class="swiper-button-next" (click)="slideNext()"></div>
+      <div class="swiper-button-prev" (click)="slidePrev()"></div>
+
+</ion-content>
